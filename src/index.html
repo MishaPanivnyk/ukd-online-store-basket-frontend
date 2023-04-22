@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Store</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link
+      href="
+https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-3.2.6.min.css
+"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Welcome to the Apple Store</h1>
+      <p>Discover the latest Apple products and accessories.</p>
+      <!-- <a href="#" class="button">Shop Now</a> -->
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+      <h2>Featured Products</h2>
+      <ul id="product-list"></ul>
+    </section>
+    <!-- Cart -->
+    <button id="open-cart-button" class="cart-button">Cart</button>
+
+    <div class="modal" id="cart-modal">
+      <div class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total"></span>$</p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
