@@ -24,7 +24,10 @@ ul {
     flex-wrap: nowrap;
   }
 }
-
+.container__footer {
+  background-color: #333;
+  padding: 40px 0;
+}
 /* Стилі шапки */
 
 header {
@@ -232,7 +235,6 @@ nav ul li a {
 footer {
   background-color: #333;
   color: #fff;
-  padding: 40px 0;
 }
 
 footer nav ul li a {
