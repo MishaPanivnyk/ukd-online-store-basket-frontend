@@ -51,6 +51,9 @@ nav {
 nav ul li {
   display: inline-block;
   margin-right: 20px;
+  @media only screen and (max-width: 576px) {
+    margin: 5px 0;
+  }
 }
 
 nav ul li:last-child {
@@ -68,7 +71,7 @@ nav ul li a {
   padding-left: 15px;
   padding-right: 15px;
   @media (min-width: 320px) {
-    width: 480px;
+    width: 320px;
   }
   @media (min-width: 768px) {
     width: 768px;
@@ -90,6 +93,9 @@ nav ul li a {
   justify-content: center; */
   text-align: center;
   color: #fff;
+  // @media only screen and (max-width: 600px) {
+  //   background-size: 100% 100%;
+  // }
 }
 
 .hero h1 {
@@ -204,8 +210,10 @@ nav ul li a {
   cursor: pointer;
   z-index: 9999;
   transition: transform 0.2s ease-in-out;
+  @media only screen and (max-width: 768px) {
+    top: 15px;
+  }
 }
-
 .cart-button:hover {
   transform: translateY(-2px);
 }
@@ -232,14 +240,47 @@ nav ul li a {
 }
 /* Стилі Footer */
 
+/* Загальні стилі */
 footer {
   background-color: #333;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+footer nav ul li {
+  margin: 0 10px;
 }
 
 footer nav ul li a {
   color: #fff;
 }
+
+/* Адаптивні стилі */
+@media only screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer nav ul li {
+    margin: 5px;
+  }
+}
+
 .item-quantity {
   width: 26px;
 

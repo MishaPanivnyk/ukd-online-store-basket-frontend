@@ -1,11 +1,12 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import axios from 'axios';
 // Отримання списку продуктів з бекенду
 const fetchProducts = async () => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       'https://ukd-online-store-basket-backend.onrender.com/api/products/'
     );
-    const products = await response.json();
+    const products = response.data;
 
     // Додавання кожного продукту у список на сторінці
     const productList = document.getElementById('product-list');
