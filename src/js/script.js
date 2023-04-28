@@ -157,22 +157,36 @@ document.addEventListener('click', event => {
 fetchProducts();
 renderCartItems();
 // Відкриття/закриття модального вікна з корзиною
-const openCartModal = () => {
-  const cartModal = document.getElementById('cart-modal');
-  cartModal.style.display = 'block';
+const cartModal = document.querySelector('#cart-modal');
+const openCartButton = document.querySelector('#open-cart-button');
 
-  renderCartItems();
-};
-
-const closeCartModal = () => {
-  const cartModal = document.getElementById('cart-modal');
+function closeCartModal() {
   cartModal.style.display = 'none';
-};
+  openCartButton.id = 'open-cart-button';
+  const closeButton = document.querySelector('#close-modal-button');
+  if (closeButton) {
+    closeButton.removeEventListener('click', closeCartModal);
+  }
+}
 
-document.getElementById('open-cart-button').addEventListener('click', openCartModal);
+function handleClickOutsideModal(event) {
+  if (event.target === cartModal) {
+    closeCartModal();
+    document.removeEventListener('click', handleClickOutsideModal);
+  }
+}
 
-document.addEventListener('click', event => {
-  if (event.target.matches('.modal') || event.target.matches('.close-modal-button')) {
+openCartButton.addEventListener('click', () => {
+  if (cartModal.style.display === 'none' || cartModal.style.display === '') {
+    cartModal.style.display = 'block';
+    openCartButton.id = 'close-cart-button';
+
+    const closeButton = document.createElement('button');
+    closeButton.setAttribute('id', 'close-modal-button');
+    closeButton.innerHTML = 'Close';
+    closeButton.addEventListener('click', closeCartModal);
+    document.addEventListener('click', handleClickOutsideModal);
+  } else {
     closeCartModal();
   }
 });
